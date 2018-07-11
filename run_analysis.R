@@ -19,7 +19,7 @@ get_data <- function() {
 get_activities <- function() {
         # reads and joins y data, and adding labels
         # and returning a dataframe
-        activitylabels <- read.table("dataset/UCI HAR Dataset/activity_labels.txt",
+        activitylabels <- read.table("UCI HAR Dataset/activity_labels.txt",
                                      sep= " ")
         names(activitylabels) <- c('activityid', "activity")
         y_trainfile <- "UCI HAR Dataset/train/y_train.txt"
