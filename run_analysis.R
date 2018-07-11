@@ -81,14 +81,15 @@ join_data <- function(x=x, activities=activities, subjects=subjects) {
         # takes as input the x, y, and subjects dataframe
         # and returns a concatenated dataframe
         print("Joining data")
+        maindata <- cbind(subjects, activities, x)
         return(maindata)
 }
 
 
-get_tidydata <- function() {
+get_tidydata <- function(maindata) {
         # creates a tidy data set by grouping on activity and subject
         tidydata <- maindata %>%
-                group_by(activity, subject)%>% 
+                group_by(activity, subject) %>% 
                 summarise_all(mean) %>%
                 arrange(activity, subject)
         names(tidydata) <- gsub("[-(),]", "", names(tidydata))
@@ -102,11 +103,9 @@ run_script <- function() {
         x <- get_x()
         subjects <- get_subjects()
         maindata <- join_data(x, activities, subjects)
-        tidydata <- get_tidydata()
+        tidydata <- get_tidydata(maindata)
         write.table(tidydata, file = "tidydata.txt", row.names = FALSE)
         print("Writing to tidydata.txt")
 }
 
 run_script()
-
-
