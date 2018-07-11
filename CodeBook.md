@@ -61,3 +61,7 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 * tBodyGyroMean
 * tBodyGyroJerkMean
 
+SUMMARIES
+=========
+
+The values in the tidydata.txt file are the means of features for each group of Subject-Activity pairs.
