@@ -10,7 +10,7 @@ get_data <- function() {
         fileurl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
         filepath <- "getdataDataset.zip"
         download.file(fileurl, destfile = filepath)
-        outpath <- "dataset"
+        outpath <- "."
         unzip(filepath, exdir=outpath)
 }
 
@@ -22,8 +22,8 @@ get_activities <- function() {
         activitylabels <- read.table("dataset/UCI HAR Dataset/activity_labels.txt",
                                      sep= " ")
         names(activitylabels) <- c('activityid', "activity")
-        y_trainfile <- "dataset/UCI HAR Dataset/train/y_train.txt"
-        y_testfile <- "dataset/UCI HAR Dataset/test/y_test.txt"
+        y_trainfile <- "UCI HAR Dataset/train/y_train.txt"
+        y_testfile <- "UCI HAR Dataset/test/y_test.txt"
         ytrain <- read.table(y_trainfile, sep=" ")
         ytest <- read.table(y_testfile, sep= " ")
         names(ytrain) <- c("activityid")
@@ -42,13 +42,13 @@ get_activities <- function() {
 get_x <- function() {
         # read the x data, rename the labels from the feature file
         # removes the unneeded columns and return dataframe
-        featuresfile <- "dataset/UCI HAR Dataset/features.txt"
+        featuresfile <- "UCI HAR Dataset/features.txt"
         features <- read.table(featuresfile, sep = " ")
         head(features)
         names(features) <- c('id', "feature")
         features <- features$feature
-        x_trainfile <- "dataset/UCI HAR Dataset/train/X_train.txt"
-        x_testfile <- "dataset/UCI HAR Dataset/test/X_test.txt"
+        x_trainfile <- "UCI HAR Dataset/train/X_train.txt"
+        x_testfile <- "UCI HAR Dataset/test/X_test.txt"
         xtrain <- read.table(x_trainfile)
         xtest <- read.table(x_testfile)
         names(xtrain) <- features
@@ -64,8 +64,8 @@ get_x <- function() {
 
 get_subjects <- function() {
         # opens the subject data files and returns a dataframe
-        subject_trainfile <- "dataset/UCI HAR Dataset/train/subject_train.txt"
-        subject_testfile <- "dataset/UCI HAR Dataset/test/subject_test.txt"
+        subject_trainfile <- "UCI HAR Dataset/train/subject_train.txt"
+        subject_testfile <- "UCI HAR Dataset/test/subject_test.txt"
         subject_train <- read.table(subject_trainfile)
         subject_test <- read.table(subject_testfile)
         names(subject_test) <- c("subject")
