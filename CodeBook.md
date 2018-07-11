@@ -29,35 +29,35 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAcc[mean|std]XYZ
-tGravityAcc[mean|std]XYZ
-tBodyAccJerk[mean|std]XYZ
-tBodyGyro[mean|std]XYZ
-tBodyGyroJerk[mean|std]XYZ
-tBodyAccMag[mean|std]
-tGravityAccMag[mean|std]
-tBodyAccJerkMag[mean|std]
-tBodyGyroMag[mean|std]
-tBodyGyroJerkMag[mean|std]
-fBodyAcc[mean|std]XYZ
-fBodyAccJerk[mean|std]XYZ
-fBodyGyro[mean|std]XYZ
-fBodyAccMag[mean|std]
-fBodyAccJerkMag[mean|std]
-fBodyGyroMag[mean|std]
-fBodyGyroJerkMag[mean|std]
+* tBodyAcc[mean|std]XYZ
+* tGravityAcc[mean|std]XYZ
+* tBodyAccJerk[mean|std]XYZ
+* tBodyGyro[mean|std]XYZ
+* tBodyGyroJerk[mean|std]XYZ
+* tBodyAccMag[mean|std]
+* tGravityAccMag[mean|std]
+* tBodyAccJerkMag[mean|std]
+* tBodyGyroMag[mean|std]
+* tBodyGyroJerkMag[mean|std]
+* fBodyAcc[mean|std]XYZ
+* fBodyAccJerk[mean|std]XYZ
+* fBodyGyro[mean|std]XYZ
+* fBodyAccMag[mean|std]
+* fBodyAccJerkMag[mean|std]
+* fBodyGyroMag[mean|std]
+* fBodyGyroJerkMag[mean|std]
 
 The set of variables that were estimated from these signals are: 
 
-mean(): Mean value
-std(): Standard deviation
+* mean(): Mean value
+* std(): Standard deviation
 
 
 Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
+* gravityMean
+* tBodyAccMean
+* tBodyAccJerkMean
+* tBodyGyroMean
+* tBodyGyroJerkMean
 
