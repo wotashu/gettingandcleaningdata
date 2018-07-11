@@ -4,6 +4,7 @@
 
 library(readr)
 library(dplyr)
+library(plyr)
 
 get_data <- function() {
         # Gets data from the internet and unzips to a dataset folder
@@ -28,9 +29,9 @@ get_activities <- function() {
         ytest <- read.table(y_testfile, sep= " ")
         names(ytrain) <- c("activityid")
         names(ytest) <- c("activityid")
-        ytest <- merge(ytest, activitylabels)
+        ytest <- join(ytest, activitylabels)
         ytest <- ytest["activity"]
-        ytrain <- merge(ytrain, activitylabels)
+        ytrain <- join(ytrain, activitylabels)
         ytrain <- ytrain["activity"]
         activities <- rbind(ytrain, ytest)
         print("Getting Activity data")
@@ -90,7 +91,7 @@ get_tidydata <- function(maindata) {
         # creates a tidy data set by grouping on activity and subject
         tidydata <- maindata %>%
                 group_by(activity, subject) %>% 
-                summarise_all(mean) %>%
+                summarise_all(mean, rm.na=FALSE) %>%
                 arrange(activity, subject)
         names(tidydata) <- gsub("[-(),]", "", names(tidydata))
         print("Generating tidy data")
